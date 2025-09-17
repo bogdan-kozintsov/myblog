@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">{{ post.title }}</h2>
+            <p class="card-text">{{ post.content }}</p>
+            <p class="text-muted">
+                Автор: {{ post.author }}<br>
+                Опубликовано: {{ post.published_date }}
+            </p>
+            <a href="{% url 'post_list' %}" class="btn btn-primary">Назад к списку</a>
+        </div>
+    </div>
+{% endblock %}
