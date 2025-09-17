@@ -1,5 +1,3 @@
-import os
-
 """
 Django settings for myblog project.
 
@@ -107,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Sakhalin'
 
 USE_I18N = True
 
@@ -124,9 +122,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+import os
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-try:
-    from .production_settings import *
-except ImportError:
-    pass

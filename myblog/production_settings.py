@@ -1,22 +1,12 @@
-DEBUG = True  # Временно включаем DEBUG
-ALLOWED_HOSTS = ['BogdanKozintsov.pythonanywhere.com', 'localhost', '127.0.0.1']
+from .settings import *
 
-# Включим логирование
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'file': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': '/home/BogdanKozintsov/debug.log',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-    },
+DEBUG = False
+ALLOWED_HOSTS = ['BogdanKozintsov.pythonanywhere.com']
+
+# Настройки базы данных для PythonAnywhere
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
